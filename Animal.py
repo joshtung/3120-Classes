@@ -1,18 +1,20 @@
 class Animal:
+
     def __init__(self, name, stamina = 50, hunger = 50): 
         self.__name = name
         self.__stamina = stamina
         self.__hunger = hunger
         print("hello, I am", self.__name)
-
-    def talk(self):
-        print("hi")
-
+        
     def run(self):
         self.__stamina -= 10
         self.__hunger -= 10
         print("Whew, I am hungry and tired now.")
         print(f"I have {self.__hunger} hunger and {self.__stamina} stamina now.")
+      
+    def talk(self,sound):
+        self.__sound=sound
+        print(f"{self.__sound}")
 
     def eat(self): 
         self.__hunger += 20
