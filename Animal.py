@@ -1,31 +1,38 @@
 class Animal:
-    def __init__(self, name, species, energy=100): 
-        self.__name = name
-        self.__species = species
-        self.__energy = energy
-        print("Hello, I am", self.__name, "and I am a", self.__species)
-        print("Energy level:", self.__energy)
 
+    def __init__(self, name, stamina = 50, hunger = 50): 
+        self.__name = name
+        self.__stamina = stamina
+        self.__hunger = hunger
+        print("hello, I am", self.__name)
+        
+    def run(self):
+        self.__stamina -= 10
+        self.__hunger -= 10
+        print("Whew, I am hungry and tired now.")
+        print(f"I have {self.__hunger} hunger and {self.__stamina} stamina now.")
+      
     def talk(self,sound):
         self.__sound=sound
         print(f"{self.__sound}")
 
-    def love(self, thing1, thing2):
-        self.__thing1= thing1
-        self.__thing2=thing2
-        print(f"{self.__name} loves {self.__thing1} and {self.__thing2}")
+    def eat(self): 
+        self.__hunger += 20
+        print("burp")
+        print(f"I have {self.__hunger} hunger now.")
+
+    def sleep(self):
+        self.__stamina += 50
+        print("I am full of energy now")
+        print(f"I have {self.__stamina} stamina now.")
 
     def play(self):
-        self.__energy -= 45
-        print(f"{self.__name} plays happily")
-        print("Energy level:", self.__energy)
+        self.__stamina -= 10
+        print("That was fun")
 
-    def food(self):
-        print(f"{self.__name} eats lots of tasty food")
-        self.__energy += 45
-        print("Energy level:", self.__energy)
-
-
+    def drink(self):
+        self.__hunger += 5 
+        print("Refreshing")
 
 
 
